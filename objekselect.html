@@ -1,0 +1,30 @@
+<html>
+<head><title>Latihan Dengan Objek Select</title></head>
+<body>
+<script languange ="JavaScript">
+<!--
+function tekan()
+{
+ var jurusanstr = (document.fform.Jurusan.value);
+ document.fform.Ojurusan.value = jurusanstr;
+}
+//-->
+</script>
+<form name ="fform">
+<H1> Penggunaan Objek Select</H1><hr>
+<h3>Masukan :<h3>
+Jurusan Di SMK AL-GHIFARI :<select name="Jurusan" Size="1">
+ <option value ="Rekayasa Perangkat Lunak"> Rekayasa Perangkat Lunak </option>
+ <option value ="Manajemen Perkantoran"> Manajemen Perkantoran</option>
+ <option value ="Akuntansi"> Akuntansi</option>
+ <option value ="Farmasi"> Farmasi</option>
+ <option value ="Teknik Kendaraan Ringan"> Teknik Kendaraan Ringan</option>
+ <option value ="Teknik Bisnis Sepeda Motor"> Teknik Bisnis Sepeda Motor</option>
+ </select>
+<p><input type="button" value="kirim" onclick="tekan()">
+<input type="reset" value="ulang">
+<H3>Output jurusan :</H3>
+<input type="text" name="Ojurusan" size="30">
+</form>
+</body>
+</html>
