@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa – Ocean Aesthetic</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ccefff, #aee6ff, #8fd5ff);
+            font-family: "Poppins", sans-serif;
+            color: #1f4f6d;
+            overflow-x: hidden;
+        }
+
+        /* --- Bubble Animasi --- */
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in;
+            filter: blur(1px);
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-900px) scale(1.8); opacity: 0; }
+        }
+
+        /* --- Container --- */
+        .container {
+            width: 700px;
+            margin: 50px auto;
+            background: #ffffffcc;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            backdrop-filter: blur(6px);
+            border: 2px solid #dff6ff;
+            position: relative;
+        }
+
+        /* --- Hiasan Sudut --- */
+        .icon1 {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 55px;
+            opacity: 0.7;
+        }
+
+        .icon2 {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            font-size: 55px;
+            opacity: 0.7;
+        }
+
+        /* --- Hiasan Gantungan Laut --- */
+        .hanger {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .hanger span {
+            animation: swing 3s ease-in-out infinite alternate;
+            transform-origin: top center;
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #1e6fa9;
+            margin: 5px;
+            text-shadow: 1px 1px 3px #e6f7ff;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        td {
+            padding: 8px;
+            font-size: 15px;
+        }
+
+        input, select, textarea {
+            width: 95%;
+            padding: 10px;
+            border-radius: 12px;
+            border: 2px solid #9edfff;
+            font-size: 14px;
+            outline: none;
+            background: #f1faff;
+            transition: .2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #56c9ff;
+            background: #e0f4ff;
+            box-shadow: 0 0 8px #9fe3ff;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(to right, #4fbfff, #38a4dd);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 10px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 117, 255, 0.4);
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #2f9ad1, #1d82b6);
+        }
+
+        .output-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #ffffffdd;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #6ecbff;
+        }
+
+        .label {
+            color: #206a94;
+            font-weight: bold;
+        }
+
+        /* --- Ombak Atas --- */
+        .wave-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            background: url('https://i.imgur.com/GV1J9yB.png');
+            background-size: cover;
+            opacity: 0.35;
+            z-index: -1;
+        }
+
+        /* --- Ombak Bawah --- */
+        .wave-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            background: url('https://i.imgur.com/VpaO6wV.png');
+            background-size: cover;
+            opacity: 0.35;
+            z-index: -1;
+        }
+
+        /* --- Animasi Paus --- */
+        .whale {
+            position: fixed;
+            bottom: 120px;
+            left: -200px;
+            font-size: 80px;
+            animation: whaleSwim 18s linear infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes whaleSwim {
+            0% { transform: translateX(-300px); }
+            50% { transform: translateX(120vw) translateY(-20px); }
+            100% { transform: translateX(-300px); }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Ombak -->
+<div class="wave-top"></div>
+<div class="wave-bottom"></div>
+
+<!-- Animasi Paus 🐳 -->
+<div class="whale">🐳</div>
+
+<!-- Bubble Random -->
+<script>
+for (let i = 0; i < 25; i++) {
+    let bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    bubble.style.left = Math.random() * 100 + "%";
+    bubble.style.animationDuration = (6 + Math.random() * 5) + "s";
+    bubble.style.width = bubble.style.height = (10 + Math.random() * 25) + "px";
+    document.body.appendChild(bubble);
+}
+</script>
+
+<div class="container">
+
+    <!-- Hiasan Gantungan Laut 🎐🪸 -->
+    <div class="hanger">
+        <span>🪸</span>
+        <span>🐚</span>
+        <span>⭐</span>
+        <span>🐠</span>
+        <span>🦀</span>
+    </div>
+
+    <!-- Ikon Sudut -->
+    <div class="icon1">🐬</div>
+    <div class="icon2">🐚</div>
+
+    <h2>Data Siswa</h2>
+    <h3>SMK AL-GHIFARI BANYURESMI</h3>
+    <hr>
+
+    <table>
+        <tr>
+            <td class="label">NIM</td>
+            <td><input type="text" id="nim"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Nama Mahasiswa</td>
+            <td><input type="text" id="nama"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Jenis Kelamin</td>
+            <td>
+                <select id="jk">
+                    <option>Perempuan</option>
+                    <option>Laki-laki</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">Agama</td>
+            <td>
+                <select id="agama">
+                    <option>Islam</option>
+                    <option>Kristen</option>
+                    <option>Katolik</option>
+                    <option>Hindu</option>
+                    <option>Buddha</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">Status</td>
+            <td>
+                <select id="status">
+                    <option>Kawin</option>
+                    <option>Tidak Kawin</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">Jurusan</td>
+            <td>
+                <select id="jurusan">
+                    <option>RPL</option>
+                    <option>OTKP</option>
+                    <option>AKL</option>
+                    <option>FKK</option>
+                    <option>TKRO</option>
+                    <option>TBSM</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="label">Komentar</td>
+            <td><textarea id="komentar" rows="4"></textarea></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button class="btn" onclick="kirimData()">Kirim</button>
+                <button class="btn" onclick="location.reload()">Ulang</button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="output-box">
+        <h3>🌊 Hasil Output 🌊</h3>
+
+        <p><span class="label">NIM: </span><span id="hasil_nim"></span></p>
+        <p><span class="label">Nama siswa: </span><span id="hasil_nama"></span></p>
+        <p><span class="label">Jenis Kelamin: </span><span id="hasil_jk"></span></p>
+        <p><span class="label">Agama: </span><span id="hasil_agama"></span></p>
+        <p><span class="label">Status: </span><span id="hasil_status"></span></p>
+        <p><span class="label">Jurusan: </span><span id="hasil_jurusan"></span></p>
+        <p><span class="label">Komentar: </span><span id="hasil_komentar"></span></p>
+    </div>
+</div>
+
+<script>
+function kirimData() {
+    document.getElementById("hasil_nim").innerHTML = document.getElementById("nim").value;
+    document.getElementById("hasil_nama").innerHTML = document.getElementById("nama").value;
+    document.getElementById("hasil_jk").innerHTML = document.getElementById("jk").value;
+    document.getElementById("hasil_agama").innerHTML = document.getElementById("agama").value;
+    document.getElementById("hasil_status").innerHTML = document.getElementById("status").value;
+    document.getElementById("hasil_jurusan").innerHTML = document.getElementById("jurusan").value;
+    document.getElementById("hasil_komentar").innerHTML = document.getElementById("komentar").value;
+}
+</script>
+
+</body>
+</html>
