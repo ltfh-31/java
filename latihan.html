@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Mahasiswa – Ocean Aesthetic</title>
+    <title>Data siswa – Ocean Aesthetic</title>
     <style>
         body {
             background: linear-gradient(to bottom, #ccefff, #aee6ff, #8fd5ff);
@@ -229,12 +229,12 @@ for (let i = 0; i < 25; i++) {
 
     <table>
         <tr>
-            <td class="label">NIM</td>
+            <td class="label">NISN</td>
             <td><input type="text" id="nim"></td>
         </tr>
 
         <tr>
-            <td class="label">Nama Mahasiswa</td>
+            <td class="label">Nama siswa</td>
             <td><input type="text" id="nama"></td>
         </tr>
 
@@ -302,7 +302,7 @@ for (let i = 0; i < 25; i++) {
     <div class="output-box">
         <h3>🌊 Hasil Output 🌊</h3>
 
-        <p><span class="label">NIM: </span><span id="hasil_nim"></span></p>
+        <p><span class="label">NISN: </span><span id="hasil_nim"></span></p>
         <p><span class="label">Nama siswa: </span><span id="hasil_nama"></span></p>
         <p><span class="label">Jenis Kelamin: </span><span id="hasil_jk"></span></p>
         <p><span class="label">Agama: </span><span id="hasil_agama"></span></p>
@@ -314,7 +314,7 @@ for (let i = 0; i < 25; i++) {
 
 <script>
 function kirimData() {
-    document.getElementById("hasil_nim").innerHTML = document.getElementById("nim").value;
+    document.getElementById("hasil_nisn").innerHTML = document.getElementById("nim").value;
     document.getElementById("hasil_nama").innerHTML = document.getElementById("nama").value;
     document.getElementById("hasil_jk").innerHTML = document.getElementById("jk").value;
     document.getElementById("hasil_agama").innerHTML = document.getElementById("agama").value;
@@ -326,3 +326,4 @@ function kirimData() {
 
 </body>
 </html>
+
